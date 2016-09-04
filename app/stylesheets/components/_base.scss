@@ -1,11 +1,1 @@
-body {
-  margin: 0;
-  background-color: $background;
-  color: $text-color;
-  font-family: $font-family;
-  font-size: 20px;
-}
-
-.split-view {
-  display: flex;
-}
+@import '../base/base';

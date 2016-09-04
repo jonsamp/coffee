@@ -422,14 +422,13 @@ let WeatherContainer = React.createClass({
   componentWillMount: function () {
 
     // Get weather for the first load
-    // this.getWeather();
+    this.getWeather();
   },
 
   componentDidMount: function () {
 
     // Get weather after every ## minutes
-    // setInterval(this.getWeather, 10000);
-    // this.getWeather();
+    setInterval(this.getWeather, 30000);
   },
 
   getWeather: function () {

@@ -16,17 +16,21 @@ module.exports = {
 		}, {
 			test: /\.js$/,
 			loader: 'babel',
+			exclude: /(node_modules|bower_components)/,
 			query: {
 				presets: ['es2015']
 			}
 		}, {
 			test: /\.scss$/,
+			exclude: /(node_modules|bower_components)/,
 			loaders: ['style', "css", "sass"]
 		}, {
 			test: /\.css$/,
+			exclude: /(bower_components)/,
 			loaders: ['style', "css", "sass"]
 		}, {
 			test: /\.json$/,
+			exclude: /(node_modules|bower_components)/,
 			loader: 'json'
 		}]
 	},

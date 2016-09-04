@@ -11,12 +11,12 @@ let App = React.createClass({
 
   getInitialState: function () {
     return {
-      splitView: false,
+      splitView: true,
       recipe: {
         "recipeId": "pourOver",
         "method": "Pour Over",
         "bloom": {
-          "time": 3,
+          "time": 5,
           "grams": 0.1176
         },
         "pour": {

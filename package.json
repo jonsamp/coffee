@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p",
+    "build": "webpack",
     "start": "webpack-dashboard -- webpack-dev-server --inline --hot"
   },
   "author": "",
