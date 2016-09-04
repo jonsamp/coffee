@@ -22625,6 +22625,7 @@
 	        this.updateTimer(timer);
 	      } else {
 	        clearInterval(interval);
+	        this.nextStep();
 	      }
 
 	      if (--timer < 0) {
@@ -22644,16 +22645,20 @@
 
 	  nextStep: function nextStep() {
 
-	    if (this.state.step < 4) {
+	    console.log('Step in the nextStep function: ', this.state.step);
 
-	      this.setState({
-	        step: this.state.step + 1
-	      });
+	    if (this.state.step < 3) {
 
-	      this.generateRecipe();
-
-	      if (this.state.step === 3) {
+	      if (this.state.step === 1) {
 	        this.setState({
+	          step: this.state.step + 1
+	        });
+	        this.generateRecipe();
+	      }
+
+	      if (this.state.step === 2) {
+	        this.setState({
+	          step: this.state.step + 1,
 	          startTime: this.props.recipe.pour.time,
 	          timeRemaining: this.props.recipe.pour.time
 	        });
@@ -22686,8 +22691,6 @@
 	        }
 	      }
 	    });
-
-	    console.log(this.state.recipe);
 	  },
 
 	  updateTimers: function updateTimers(states) {
@@ -30206,8 +30209,7 @@
 
 	  componentWillUnmount: function componentWillUnmount() {
 	    this.props.updateTimers({
-	      timeRemaining: 0,
-	      countdown: false
+	      timeRemaining: 0
 	    });
 	  },
 
