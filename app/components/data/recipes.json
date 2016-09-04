@@ -1,0 +1,59 @@
+{
+  "pourOver": {
+    "recipeId": "pourOver",
+    "method": "Pour Over",
+    "bloom": 60,
+    "pour": 245,
+    "grind": "Grind at 24 coarseness",
+    "intensity": 17,
+    "min": 10,
+    "max": 25
+    /*
+    Step 1: Bloom: Pour ## grams of water
+    Step 2: Pour: Pour ## grams of water, then pour to ## grams
+    */
+  },
+  "chemex": {
+    "recipeId": "chemex",
+    "method": "Chemex",
+    "bloom": 60,
+    "pour": 245,
+    "grind": "Grind at 24 coarseness",
+    "intensity": 17,
+    "min": 15,
+    "max": 40
+    /*
+    Step 1: Bloom: Pour ## grams of water
+    Step 2: Pour: Pour ## grams of water, then pour to ## grams
+    */
+  },
+  "aeropress": {
+    "recipeId": "aeropress",
+    "method": "Aeropress",
+    "bloom": 60,
+    "pour": 245,
+    "grind": "Grind at 24 coarseness",
+    "intensity": 17,
+    "max": 16,
+    "min": 10
+    /*
+    Step 1: Bloom: Pour ## grams of water
+    Step 2: Pour: Pour ## grams of water, then pour to ## grams
+    */
+  },
+  "icedCoffee": {
+    "recipeId": "icedCoffee",
+    "method": "Iced Coffee",
+    "bloom": 60,
+    "pour": 245,
+    "grind": "Grind at 24 coarseness",
+    "intensity": 17,
+    "min": 10,
+    "max": 25
+    /*
+    Gram selector: Add ## grams of ice.
+    Step 1: Bloom: Pour ## grams of water
+    Step 2: Pour: Pour ## grams of water, then pour to ## grams
+    */
+  }
+}

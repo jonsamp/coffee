@@ -1,0 +1,22 @@
+// Colors
+$text-color: HSL(0,0%,100%);
+
+$background: HSL(0, 0%, 22%);
+$background-2: HSL(0, 2%, 12%);
+
+$light-grey: #979797;
+
+$accent: HSL(19, 100%, 50%);
+$accent-2: HSL(19, 100%, 39%);
+$accent-3: HSL(17, 100%, 28%);
+
+$accent-4: #00B6FF;
+
+// Typography
+$font-family: 'Lato', sans-serif;
+
+@mixin uppercase() {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+}

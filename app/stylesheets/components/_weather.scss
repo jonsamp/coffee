@@ -1,0 +1,219 @@
+@import '../base/base';
+
+.weather {
+  width: 50%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: $text-color;
+
+  & > section {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+
+    @function weather-image($image-id) {
+       @return linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url( 'https://source.unsplash.com/' + $image-id + '/600x680');
+    }
+
+    &.clear-day {
+      background-image: weather-image('ocwmWiNAWGs');
+    }
+
+    &.clear-night {
+      background-image: weather-image('Jztmx9yqjBw');
+    }
+
+    &.rain {
+      background-image: weather-image('pGQbWXBC1dA');
+    }
+
+    &.snow {
+      background-image: weather-image('wLn_6Y4j7EY');
+    }
+
+    &.sleet {
+      background-image: weather-image('wLn_6Y4j7EY');
+    }
+
+    &.wind {
+      background-image: weather-image('kmF_Aq8gkp0');
+    }
+
+    &.fog {
+      background-image: weather-image('x9RN-ZIzkf0');
+    }
+
+    &.cloudy {
+      background-image: weather-image('auMjWDfTFhI');
+    }
+
+    &.partly-cloudy-day {
+      background-image: weather-image('UN5UCiO9vGE');
+    }
+
+    &.partly-cloudy-night {
+      background-image: weather-image('WCtvwLHC9Ec');
+    }
+
+
+  }
+
+  .degrees {
+    &::after {
+      content: '°';
+    }
+  }
+
+  .temp {
+    padding: 1em;
+    h1 {
+      font-weight: 300;
+      font-size: 6.5em;
+      margin: 0em -0.15em 0 0;
+    }
+
+    h3 {
+      font-weight: 400;
+      line-height: 1.4em;
+    }
+  }
+
+  .high-low {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+    margin-bottom: 0.5em;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 6em;
+    }
+
+    svg {
+      float: left;
+      margin: 0;
+      padding: 0;
+      margin-right: 0.65em;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .sun {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin-bottom: 0.5em;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 6em;
+    }
+
+    svg {
+      margin-bottom: 0.5em;
+    }
+
+    .right-arrow {
+      padding-top: 0.5em;
+      cursor: pointer;
+    }
+  }
+
+  .more-info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    svg {
+      margin: 1em;
+    }
+
+    .title {
+      background-color: rgba(0,0,0,0.7);
+      padding: 0.5em 1em 0.5em 1em;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 0.5em;
+      margin-right: 1em;
+      width: calc(50% - 3em);
+      text-align: center;
+    }
+
+    .categories {
+      padding: 0 2em;
+    }
+    .precipitation, .temperature {
+      padding: 0.5em 2em;
+
+      .precip-chance, .temp-chance {
+        font-family: courier;
+        margin: 0.75em 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .precip-time, .temp-time {
+          width: 3em;
+          text-align: right;
+        }
+
+        .precip-bar, .rain, .temp-fill, .temp-bar {
+          width: 60%;
+          border-radius: 99em;
+          height: 0.5em;
+          background-color: rgba(0,0,0,0.7);
+          margin-top: 0.35em;
+        }
+
+        .rain {
+          background-color: $accent-4;
+          margin-top: 0em;
+          float: left;
+        }
+
+        .temp-fill {
+          background-color: $accent;
+          margin-top: 0em;
+          float: left;
+        }
+
+        .precip-percent {
+          width: 3em;
+          text-align: left;
+          &::after {
+            content: '%';
+          }
+        }
+
+        .temp-value {
+          width: 3em;
+          text-align: left;
+          &::after {
+            content: '°';
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import '../base/base';
+
+.coffee {
+  width: 50%;
+  height: 100vh;
+  overflow: auto;
+  background-color: $background;
+
+  .header {
+    padding: 1.5em 1.5em;
+    border-bottom: 2px solid $light-grey;
+    @include uppercase
+
+    span {
+      display: inline-block;
+      position: relative;
+      top: -0.5em;
+    }
+  }
+
+  svg {
+    margin-right: 0.5em;
+  }
+
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1.5em;
+    border-bottom: 2px solid $light-grey;
+    padding: 1.5em 1.25em 1.5em 0;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin-right: 1.5em;
+      }
+    }
+
+    p {
+      font-size: 1.3em;
+      font-style: italic;
+      letter-spacing: 0.07em;
+      font-weight: 300;
+    }
+
+  }
+
+}

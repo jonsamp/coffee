@@ -1,0 +1,126 @@
+@import '../base/base';
+
+.brew {
+  background-color: $background;
+  color: $text-color;
+  height: 100vh;
+
+  .background-progress {
+    height: 100vh;
+    float: left;
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    background-color: $accent-3;
+    transition: 0.5s
+  }
+
+  .header {
+    position: absolute;
+    padding: 2em ;
+    align-self: flex-start;
+    letter-spacing: 0.1em;
+    z-index: 1;
+
+    h3 {
+      margin: 0;
+      margin-bottom: 0.5em;
+      @include uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    h4 {
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid fuchsia;
+    height: 100vh;
+  }
+
+  .gram-select {
+    z-index: 1;
+    width: 60vw;
+    text-align: center;
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 8em;
+      font-weight: 300;
+      margin: 0;
+      margin-bottom: 0.35em;
+    }
+
+    .rc-slider {
+      width: 100%;
+    }
+
+    .rc-slider-handle {
+      border: none;
+      width: 2.5em;
+      height: 2.5em;
+      margin-top: -1em;
+      background-color: $accent;
+      box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.45);
+    }
+
+    .rc-slider-track {
+      background-color: $accent-2;
+      height: 0.45em;
+    }
+
+    .rc-slider {
+      height: 0.45em;
+    }
+  }
+
+  .timer h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 10em;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    margin-top: -0.25em;
+  }
+
+  .footer {
+    background-color: $accent-2;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+
+    .start-brew {
+      @include uppercase;
+      padding: 1em 1.25em;
+    }
+
+    .brew-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 1.5em;
+      span {
+        padding: 1em 1.25em;
+        &.reset-button {
+          padding-left: 3em;
+          padding-right: 3em;
+          text-transform: uppercase;
+          letter-spacing: 0.2em;
+          font-weight: 700;
+          background-color: $accent-3;
+          margin-right: 0;
+        }
+      }
+
+
+    }
+  }
+}

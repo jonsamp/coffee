@@ -1,0 +1,66 @@
+{
+  "pourOver": {
+    "recipeId": "pourOver",
+    "method": "Pour Over",
+    "bloom": {
+      "time": 60,
+      "grams": 0.1176
+    },
+    "pour": {
+      "time": 165,
+      "grams": 0.8824
+    },
+    "grind": 22,
+    "intensity": 17,
+    "min": 10,
+    "max": 25
+  },
+  "chemex": {
+    "recipeId": "chemex",
+    "method": "Chemex",
+    "bloom": {
+      "time": 60,
+      "grams": 0.1176
+    },
+    "pour": {
+      "time": 165,
+      "grams": 0.8824
+    },
+    "grind": 24,
+    "intensity": 17,
+    "min": 15,
+    "max": 40
+  },
+  "aeropress": {
+    "recipeId": "aeropress",
+    "method": "Aeropress",
+    "bloom": {
+      "time": 60,
+      "grams": 1
+    },
+    "pour": {
+      "time": 165,
+      "grams": 0
+    },
+    "grind": 24,
+    "intensity": 16,
+    "max": 16,
+    "min": 10
+  },
+  "icedCoffee": {
+    "recipeId": "icedCoffee",
+    "method": "Iced Coffee",
+    "bloom": {
+      "time": 60,
+      "grams": 0.1176
+    },
+    "pour": {
+      "time": 165,
+      "grams": 0.8824
+    },
+    "grind": 24,
+    "intensity": 17,
+    "min": 10,
+    "max": 25
+  }
+}
