@@ -1,9 +1,9 @@
 import React from 'react';
 import IconCoffeeBeans from '../../images/coffee-beans';
 
-function coffeeHeader() {
+function coffeeHeader(props) {
   return (
-    <div className='header'>
+    <div className='header' onClick={props.reloadPage}>
       <IconCoffeeBeans /> <span>Coffee</span>
     </div>
   )

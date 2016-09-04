@@ -19,19 +19,20 @@
     position: absolute;
     padding: 2em ;
     align-self: flex-start;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     z-index: 1;
 
     h3 {
       margin: 0;
       margin-bottom: 0.5em;
       @include uppercase;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.05em;
     }
 
     h4 {
       font-weight: 400;
       margin: 0;
+      width: 20em;
     }
   }
 
@@ -51,7 +52,7 @@
     h1 {
       position: relative;
       z-index: 1;
-      font-size: 8em;
+      font-size: 7em;
       font-weight: 300;
       margin: 0;
       margin-bottom: 0.35em;
@@ -83,7 +84,7 @@
   .timer h1 {
     position: relative;
     z-index: 1;
-    font-size: 10em;
+    font-size: 7em;
     font-weight: 300;
     margin: 0;
     padding: 0;
@@ -91,7 +92,7 @@
   }
 
   .footer {
-    background-color: $accent-2;
+    background-color: $accent;
     width: 100%;
     text-align: center;
     position: fixed;

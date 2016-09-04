@@ -4,10 +4,14 @@ import MenuItem from './menuItem';
 
 let coffeeMenu = React.createClass({
 
+  reloadPage: function () {
+    window.location.reload();
+  },
+
   render: function () {
     return (
       <div className='coffee'>
-        <CoffeeHeader />
+        <CoffeeHeader reloadPage={this.reloadPage}/>
         <MenuItem recipe={this.props.recipes.pourOver} handleClick={ this.props.handleClick }/>
         <MenuItem recipe={this.props.recipes.chemex} handleClick={ this.props.handleClick }/>
         <MenuItem recipe={this.props.recipes.aeropress} handleClick={ this.props.handleClick }/>

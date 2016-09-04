@@ -29,21 +29,21 @@
     align-items: center;
     margin-left: 1.5em;
     border-bottom: 2px solid $light-grey;
-    padding: 1.5em 1.25em 1.5em 0;
+    padding: 1em 1.25em 1em 0;
 
     div {
       display: flex;
       align-items: center;
 
       svg {
-        margin-right: 1.5em;
+        margin-right: 1em;
       }
     }
 
     p {
       font-size: 1.3em;
       font-style: italic;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.05em;
       font-weight: 300;
     }
 
