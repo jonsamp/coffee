@@ -428,7 +428,7 @@ let WeatherContainer = React.createClass({
   componentDidMount: function () {
 
     // Get weather after every ## minutes
-    setInterval(this.getWeather, 30000);
+    setInterval(this.getWeather, 420000);
   },
 
   getWeather: function () {
@@ -452,7 +452,6 @@ let WeatherContainer = React.createClass({
     const longitude = '41.902881';
 
     jsonp(`https://api.forecast.io/forecast/${apiKey}/${longitude},${latitude}`, function (data) {
-      console.log(data);
       this.setState({
         currentTemp: data.currently.temperature,
         summary: data.minutely.summary,

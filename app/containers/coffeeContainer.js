@@ -45,6 +45,7 @@ let CoffeeContainer = React.createClass({
         this.updateTimer(timer);
       } else {
         clearInterval(interval);
+        this.nextStep();
       }
 
       if (--timer < 0) {
@@ -64,16 +65,20 @@ let CoffeeContainer = React.createClass({
 
   nextStep: function () {
 
-    if (this.state.step < 4) {
+    console.log('Step in the nextStep function: ', this.state.step);
 
-      this.setState({
-        step: this.state.step + 1
-      });
+    if (this.state.step < 3) {
 
-      this.generateRecipe();
-
-      if (this.state.step === 3) {
+      if (this.state.step === 1) {
         this.setState({
+          step: this.state.step + 1
+        });
+        this.generateRecipe();
+      }
+
+      if (this.state.step === 2) {
+        this.setState({
+          step: this.state.step + 1,
           startTime: this.props.recipe.pour.time,
           timeRemaining: this.props.recipe.pour.time
         });
@@ -106,8 +111,6 @@ let CoffeeContainer = React.createClass({
         }
       }
     });
-
-    console.log(this.state.recipe);
   },
 
   updateTimers: function (states) {

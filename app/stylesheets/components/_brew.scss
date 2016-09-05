@@ -109,10 +109,10 @@
       align-items: center;
       padding-left: 1.5em;
       span {
-        padding: 1em 1.25em;
+        padding: 1em 0;
         &.reset-button {
-          padding-left: 3em;
-          padding-right: 3em;
+          padding-left: 2em;
+          padding-right: 2em;
           text-transform: uppercase;
           letter-spacing: 0.2em;
           font-weight: 700;

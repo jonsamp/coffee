@@ -23,7 +23,7 @@
 
 
     @function weather-image($image-id) {
-       @return linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url( 'https://source.unsplash.com/' + $image-id + '/600x680');
+       @return linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url( 'https://source.unsplash.com/' + $image-id + '/600x680');
     }
 
     &.clear-day {
@@ -152,12 +152,12 @@
 
     .title {
       background-color: rgba(0,0,0,0.7);
-      padding: 0.5em 1em 0.5em 1em;
+      padding: 0.5em 0.5em 0.5em 0.5em;
       border-radius: 6px;
       display: inline-block;
       margin-bottom: 0.5em;
       margin-right: 1em;
-      width: calc(50% - 3em);
+      width: calc(50% - 2em);
       text-align: center;
     }
 

@@ -8,8 +8,7 @@ let Timer = React.createClass({
 
   componentWillUnmount: function () {
     this.props.updateTimers({
-      timeRemaining: 0,
-      countdown: false
+      timeRemaining: 0
     });
   },
 
