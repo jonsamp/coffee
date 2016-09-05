@@ -17,3 +17,8 @@ body {
 @import 'components/weather';
 @import 'components/coffee';
 @import 'components/brew';
+
+*::-webkit-scrollbar {
+  /* This is the magic bit */
+  display: none !important;
+}

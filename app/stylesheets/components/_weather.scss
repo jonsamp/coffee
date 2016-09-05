@@ -59,7 +59,7 @@
     }
 
     &.partly-cloudy-day {
-      background-image: weather-image('UN5UCiO9vGE');
+      background-image: weather-image('UAin9f4XOP0');
     }
 
     &.partly-cloudy-night {
@@ -165,7 +165,7 @@
       padding: 0 2em;
     }
     .precipitation, .temperature {
-      padding: 0.5em 2em;
+      padding: 0.5em 1em;
 
       .precip-chance, .temp-chance {
         font-family: courier;
