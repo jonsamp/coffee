@@ -21918,7 +21918,8 @@
 	        "ozone": 304.26
 	      }],
 	      backgroundImage: 'partly-cloudy-day',
-	      mainWeatherView: true
+	      mainWeatherView: true,
+	      lastWeatherCall: ''
 	    };
 	  },
 
@@ -21931,7 +21932,7 @@
 	  componentDidMount: function componentDidMount() {
 
 	    // Get weather after every 3 minutes
-	    setInterval(this.getWeather, 180000);
+	    setInterval(this.getWeather, 300000);
 	  },
 
 	  getWeather: function getWeather() {
@@ -21963,7 +21964,8 @@
 	        sunset: data.daily.data[0].sunsetTime,
 	        hourly: data.hourly.data,
 	        raining: data.currently.precipIntensity > 14 ? true : false,
-	        backgroundImage: data.currently.icon
+	        backgroundImage: data.currently.icon,
+	        lastWeatherCall: new Date().toLocaleString()
 	      });
 	    }.bind(this));
 	  },
@@ -22056,7 +22058,7 @@
 
 	    return React.createElement('div', { className: 'weather' }, function () {
 	      if (_this.state.mainWeatherView) {
-	        return React.createElement('section', { className: backgroundImage }, React.createElement('div', null, React.createElement(Temp, { currentTemp: currentTemp, summary: summary })), React.createElement('div', null, React.createElement(HighLow, { highTemp: highTemp, lowTemp: lowTemp, humidity: humidity, humiditySummary: humiditySummary }), React.createElement(Sun, { sunrise: sunrise, sunset: sunset, toggleView: toggleView, raining: raining })));
+	        return React.createElement('section', { className: backgroundImage }, React.createElement('div', null, React.createElement(Temp, { currentTemp: currentTemp, summary: summary, lastWeatherCall: _this.state.lastWeatherCall })), React.createElement('div', null, React.createElement(HighLow, { highTemp: highTemp, lowTemp: lowTemp, humidity: humidity, humiditySummary: humiditySummary }), React.createElement(Sun, { sunrise: sunrise, sunset: sunset, toggleView: toggleView, raining: raining })));
 	      } else {
 	        return React.createElement('section', { className: 'more-info ' + backgroundImage }, React.createElement('div', { onClick: toggleView }, React.createElement(IconLeftArrow, null)), React.createElement(WeatherDetailsContainer, { nextEightHours: nextEightHours }));
 	      }
@@ -22224,7 +22226,7 @@
 	var React = __webpack_require__(1);
 
 	function temp(props) {
-	  return React.createElement('section', { className: 'temp' }, React.createElement('h1', { className: 'degrees' }, props.currentTemp), React.createElement('h3', null, props.summary));
+	  return React.createElement('section', { className: 'temp' }, React.createElement('h1', { className: 'degrees' }, props.currentTemp), React.createElement('h3', null, props.summary), React.createElement('p', { style: { fontFamily: 'Courier' } }, props.lastWeatherCall));
 	}
 
 	module.exports = temp;
