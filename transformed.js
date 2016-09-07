@@ -21918,8 +21918,7 @@
 	        "ozone": 304.26
 	      }],
 	      backgroundImage: 'partly-cloudy-day',
-	      mainWeatherView: true,
-	      lastWeatherCall: []
+	      mainWeatherView: true
 	    };
 	  },
 
@@ -21967,8 +21966,6 @@
 	        backgroundImage: data.currently.icon
 	      });
 	    }.bind(this));
-
-	    this.state.lastWeatherCall.push(new Date().toLocaleTimeString());
 	  },
 
 	  // Epoch -> human time
@@ -22059,7 +22056,7 @@
 
 	    return React.createElement('div', { className: 'weather' }, function () {
 	      if (_this.state.mainWeatherView) {
-	        return React.createElement('section', { className: backgroundImage }, React.createElement('div', null, React.createElement(Temp, { currentTemp: currentTemp, summary: summary, lastWeatherCall: _this.state.lastWeatherCall })), React.createElement('div', null, React.createElement(HighLow, { highTemp: highTemp, lowTemp: lowTemp, humidity: humidity, humiditySummary: humiditySummary }), React.createElement(Sun, { sunrise: sunrise, sunset: sunset, toggleView: toggleView, raining: raining })));
+	        return React.createElement('section', { className: backgroundImage }, React.createElement('div', null, React.createElement(Temp, { currentTemp: currentTemp, summary: summary })), React.createElement('div', null, React.createElement(HighLow, { highTemp: highTemp, lowTemp: lowTemp, humidity: humidity, humiditySummary: humiditySummary }), React.createElement(Sun, { sunrise: sunrise, sunset: sunset, toggleView: toggleView, raining: raining })));
 	      } else {
 	        return React.createElement('section', { className: 'more-info ' + backgroundImage }, React.createElement('div', { onClick: toggleView }, React.createElement(IconLeftArrow, null)), React.createElement(WeatherDetailsContainer, { nextEightHours: nextEightHours }));
 	      }
