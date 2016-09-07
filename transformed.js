@@ -21919,7 +21919,7 @@
 	      }],
 	      backgroundImage: 'partly-cloudy-day',
 	      mainWeatherView: true,
-	      lastWeatherCall: ''
+	      lastWeatherCall: []
 	    };
 	  },
 
@@ -21931,7 +21931,7 @@
 
 	  componentDidMount: function componentDidMount() {
 
-	    // Get weather after every 3 minutes
+	    // Get weather after every 5 minutes
 	    setInterval(this.getWeather, 300000);
 	  },
 
@@ -21964,10 +21964,11 @@
 	        sunset: data.daily.data[0].sunsetTime,
 	        hourly: data.hourly.data,
 	        raining: data.currently.precipIntensity > 14 ? true : false,
-	        backgroundImage: data.currently.icon,
-	        lastWeatherCall: new Date().toLocaleString()
+	        backgroundImage: data.currently.icon
 	      });
 	    }.bind(this));
+
+	    this.state.lastWeatherCall.push(new Date().toLocaleTimeString());
 	  },
 
 	  // Epoch -> human time
@@ -22226,7 +22227,7 @@
 	var React = __webpack_require__(1);
 
 	function temp(props) {
-	  return React.createElement('section', { className: 'temp' }, React.createElement('h1', { className: 'degrees' }, props.currentTemp), React.createElement('h3', null, props.summary), React.createElement('p', { style: { fontFamily: 'Courier' } }, props.lastWeatherCall));
+	  return React.createElement('section', { className: 'temp' }, React.createElement('h1', { className: 'degrees' }, props.currentTemp), React.createElement('h3', null, props.summary), React.createElement('p', { style: { fontFamily: 'Courier', maxWidth: '10em', display: 'block' } }, props.lastWeatherCall, ' '));
 	}
 
 	module.exports = temp;
