@@ -21918,23 +21918,22 @@
 	        "ozone": 304.26
 	      }],
 	      backgroundImage: 'partly-cloudy-day',
-	      mainWeatherView: true
+	      mainWeatherView: true,
+	      getWeatherInterval: setInterval(this.getWeather, 180000)
 	    };
 	  },
 
-	  componentWillMount: function componentWillMount() {
-
-	    // Get weather for the first load
+	  componentDidMount: function componentDidMount() {
 	    this.getWeather();
+	    this.state.getWeatherInterval;
 	  },
 
-	  componentDidMount: function componentDidMount() {
-
-	    // Get weather after every 5 minutes
-	    setInterval(this.getWeather, 300000);
+	  componentWillUnmount: function componentWillUnmount() {
+	    clearInterval(this.state.getWeatherInterval);
 	  },
 
 	  getWeather: function getWeather() {
+	    console.log('Getting weather at: ' + new Date().toLocaleTimeString());
 	    function jsonp(url, callback) {
 	      var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
 	      window[callbackName] = function (data) {
