@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo 'Moving files from build to main directory'
-cp /build/index.html /index.html
-cp /build/transformed.js /transformed.js
+cp build/index.html index.html
+cp build/transformed.js transformed.js
 
 echo 'Committing and pushing to git'
 git add .
