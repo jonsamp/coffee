@@ -5,6 +5,7 @@ function temp(props) {
     <section className='temp'>
       <h1 className='degrees'>{props.currentTemp}</h1>
       <h3>{props.summary}</h3>
+      <p style={{ fontFamily: 'Courier', maxWidth: '10em', display: 'block'}}>{props.lastWeatherCall} </p>
     </section>
   )
 }

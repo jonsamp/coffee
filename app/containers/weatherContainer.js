@@ -415,23 +415,22 @@ let WeatherContainer = React.createClass({
         }
       ],
       backgroundImage: 'partly-cloudy-day',
-      mainWeatherView: true
+      mainWeatherView: true,
+      getWeatherInterval: setInterval(this.getWeather, 180000)
     }
   },
 
-  componentWillMount: function () {
-
-    // Get weather for the first load
+  componentDidMount: function () {
     this.getWeather();
+    this.state.getWeatherInterval;
   },
 
-  componentDidMount: function () {
-
-    // Get weather after every 3 minutes
-    setInterval(this.getWeather, 180000);
+  componentWillUnmount: function () {
+    clearInterval(this.state.getWeatherInterval);
   },
 
   getWeather: function () {
+    console.log('Getting weather at: ' + new Date().toLocaleTimeString());
     function jsonp(url, callback) {
       let callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
       window[callbackName] = function (data) {
@@ -561,11 +560,11 @@ let WeatherContainer = React.createClass({
             return (
               <section className={backgroundImage}>
                 <div>
-                  <Temp currentTemp={currentTemp} summary={summary}/>
+                  <Temp currentTemp={currentTemp} summary={summary} />
                 </div>
                 <div>
                   <HighLow highTemp={highTemp} lowTemp={lowTemp} humidity={humidity} humiditySummary={humiditySummary}/>
-                  <Sun sunrise={sunrise} sunset={sunset} toggleView={toggleView} raining={raining}/>
+                  <Sun sunrise={sunrise} sunset={sunset} toggleView={toggleView} raining={raining} />
                 </div>
               </section>
             )

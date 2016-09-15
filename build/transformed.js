@@ -21918,23 +21918,22 @@
 	        "ozone": 304.26
 	      }],
 	      backgroundImage: 'partly-cloudy-day',
-	      mainWeatherView: true
+	      mainWeatherView: true,
+	      getWeatherInterval: setInterval(this.getWeather, 180000)
 	    };
 	  },
 
-	  componentWillMount: function componentWillMount() {
-
-	    // Get weather for the first load
+	  componentDidMount: function componentDidMount() {
 	    this.getWeather();
+	    this.state.getWeatherInterval;
 	  },
 
-	  componentDidMount: function componentDidMount() {
-
-	    // Get weather after every ## minutes
-	    setInterval(this.getWeather, 420000);
+	  componentWillUnmount: function componentWillUnmount() {
+	    clearInterval(this.state.getWeatherInterval);
 	  },
 
 	  getWeather: function getWeather() {
+	    console.log('Getting weather at: ' + new Date().toLocaleTimeString());
 	    function jsonp(url, callback) {
 	      var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
 	      window[callbackName] = function (data) {
@@ -22224,7 +22223,7 @@
 	var React = __webpack_require__(1);
 
 	function temp(props) {
-	  return React.createElement('section', { className: 'temp' }, React.createElement('h1', { className: 'degrees' }, props.currentTemp), React.createElement('h3', null, props.summary));
+	  return React.createElement('section', { className: 'temp' }, React.createElement('h1', { className: 'degrees' }, props.currentTemp), React.createElement('h3', null, props.summary), React.createElement('p', { style: { fontFamily: 'Courier', maxWidth: '10em', display: 'block' } }, props.lastWeatherCall, ' '));
 	}
 
 	module.exports = temp;
@@ -30236,7 +30235,7 @@
 				"grams": 0.8824
 			},
 			"grind": 22,
-			"intensity": 17,
+			"intensity": 16,
 			"min": 10,
 			"max": 25
 		},
@@ -30252,7 +30251,7 @@
 				"grams": 0.8824
 			},
 			"grind": 24,
-			"intensity": 17,
+			"intensity": 16,
 			"min": 15,
 			"max": 40
 		},
@@ -30284,7 +30283,7 @@
 				"grams": 0.8824
 			},
 			"grind": 24,
-			"intensity": 17,
+			"intensity": 16,
 			"min": 10,
 			"max": 25
 		}
