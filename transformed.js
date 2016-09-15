@@ -30235,7 +30235,7 @@
 				"grams": 0.8824
 			},
 			"grind": 22,
-			"intensity": 17,
+			"intensity": 16,
 			"min": 10,
 			"max": 25
 		},
@@ -30251,7 +30251,7 @@
 				"grams": 0.8824
 			},
 			"grind": 24,
-			"intensity": 17,
+			"intensity": 16,
 			"min": 15,
 			"max": 40
 		},
@@ -30283,7 +30283,7 @@
 				"grams": 0.8824
 			},
 			"grind": 24,
-			"intensity": 17,
+			"intensity": 16,
 			"min": 10,
 			"max": 25
 		}
