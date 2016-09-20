@@ -21622,7 +21622,7 @@
 	    var latitude = '-87.701378';
 	    var longitude = '41.902881';
 
-	    jsonp('https://api.forecast.io/forecast/' + apiKey + '/' + longitude + ',' + latitude, function (data) {
+	    jsonp('https://api.darksky.net/forecast/' + apiKey + '/' + longitude + ',' + latitude, function (data) {
 	      this.setState({
 	        currentTemp: data.currently.temperature,
 	        summary: data.minutely.summary,
