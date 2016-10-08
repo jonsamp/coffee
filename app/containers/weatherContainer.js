@@ -9,14 +9,14 @@ let WeatherContainer = React.createClass({
 
   getInitialState: function () {
     return {
-      currentTemp: 54.23,
-      summary: 'Light rain starting in the afternoon.',
-      highTemp: 68.23,
-      lowTemp: 51.14,
-      humidity: 0.37,
+      currentTemp: null,
+      summary: '---',
+      highTemp: null,
+      lowTemp: null,
+      humidity: null,
       humiditySummary: null,
-      sunrise: 1472477947,
-      sunset: 1472519086,
+      sunrise: null,
+      sunset: null,
       raining: false,
       hourly: [
         {
@@ -85,7 +85,7 @@ let WeatherContainer = React.createClass({
           "ozone": 293.28
         }
       ],
-      backgroundImage: 'partly-cloudy-day',
+      backgroundImage: 'no-bg-image',
       mainWeatherView: true,
       getWeatherInterval: setInterval(this.getWeather, 180000)
     }
@@ -101,7 +101,6 @@ let WeatherContainer = React.createClass({
   },
 
   getWeather: function () {
-    console.log('Getting weather at: ' + new Date().toLocaleTimeString());
     function jsonp(url, callback) {
       let callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
       window[callbackName] = function (data) {
@@ -139,13 +138,17 @@ let WeatherContainer = React.createClass({
 
   // Epoch -> human time
   parseTime: function (timeStamp) {
-    let timeString = new Date(timeStamp * 1000).toLocaleTimeString();
-    if (timeString[0] == 0) {
-      timeString = timeString.slice(0, 5) + ' ' + timeString.slice(9, 11);
+    if (timeStamp) {
+      let timeString = new Date(timeStamp * 1000).toLocaleTimeString();
+      if (timeString[0] == 0) {
+        timeString = timeString.slice(0, 5) + ' ' + timeString.slice(9, 11);
+      } else {
+        timeString = timeString.slice(0, 4) + ' ' + timeString.slice(8, 10);
+      }
+      return timeString;
     } else {
-      timeString = timeString.slice(0, 4) + ' ' + timeString.slice(8, 10);
+      return '--:--';
     }
-    return timeString;
   },
 
   roundNumber: function (number) {

@@ -4,13 +4,13 @@
     "method": "Pour Over",
     "bloom": {
       "time": 60,
-      "grams": 0.1176
+      "grams": 0.125
     },
     "pour": {
       "time": 165,
-      "grams": 0.8824
+      "grams": 0.875
     },
-    "grind": 22,
+    "grind": 26,
     "intensity": 16,
     "min": 10,
     "max": 25
@@ -20,13 +20,13 @@
     "method": "Chemex",
     "bloom": {
       "time": 60,
-      "grams": 0.1176
+      "grams": 0.125
     },
     "pour": {
       "time": 165,
-      "grams": 0.8824
+      "grams": 0.875
     },
-    "grind": 24,
+    "grind": 30,
     "intensity": 16,
     "min": 15,
     "max": 40
@@ -52,11 +52,11 @@
     "method": "Iced Coffee",
     "bloom": {
       "time": 60,
-      "grams": 0.1176
+      "grams": 0.125
     },
     "pour": {
       "time": 165,
-      "grams": 0.8824
+      "grams": 0.875
     },
     "grind": 24,
     "intensity": 16,
