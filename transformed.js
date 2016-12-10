@@ -21515,6 +21515,7 @@
 	  getInitialState: function getInitialState() {
 	    return {
 	      currentTemp: null,
+	      feelsLike: '--',
 	      summary: '---',
 	      highTemp: null,
 	      lowTemp: null,
@@ -21622,8 +21623,10 @@
 	    var longitude = '41.902881';
 
 	    jsonp('https://api.darksky.net/forecast/' + apiKey + '/' + longitude + ',' + latitude, function (data) {
+	      console.log(data);
 	      this.setState({
 	        currentTemp: data.currently.temperature,
+	        feelsLike: data.currently.apparentTemperature,
 	        summary: data.minutely.summary,
 	        highTemp: data.daily.data[0].temperatureMax,
 	        lowTemp: data.daily.data[0].temperatureMin,
@@ -21716,6 +21719,7 @@
 	    // Prepare data to be passed to presentational components
 	    var backgroundImage = this.state.backgroundImage;
 	    var currentTemp = this.roundNumber(this.state.currentTemp);
+	    var feelsLike = Math.round(this.state.feelsLike) + '°';
 	    var summary = this.state.summary;
 	    var highTemp = this.roundNumber(this.state.highTemp);
 	    var lowTemp = this.roundNumber(this.state.lowTemp);
@@ -21729,7 +21733,7 @@
 
 	    return React.createElement('div', { className: 'weather' }, function () {
 	      if (_this.state.mainWeatherView) {
-	        return React.createElement('section', { className: backgroundImage }, React.createElement('div', null, React.createElement(Temp, { currentTemp: currentTemp, summary: summary })), React.createElement('div', null, React.createElement(HighLow, { highTemp: highTemp, lowTemp: lowTemp, humidity: humidity, humiditySummary: humiditySummary }), React.createElement(Sun, { sunrise: sunrise, sunset: sunset, toggleView: toggleView, raining: raining })));
+	        return React.createElement('section', { className: backgroundImage }, React.createElement('div', null, React.createElement(Temp, { currentTemp: currentTemp, feelsLike: feelsLike, summary: summary })), React.createElement('div', null, React.createElement(HighLow, { highTemp: highTemp, lowTemp: lowTemp, humidity: humidity, humiditySummary: humiditySummary }), React.createElement(Sun, { sunrise: sunrise, sunset: sunset, toggleView: toggleView, raining: raining })));
 	      } else {
 	        return React.createElement('section', { className: 'more-info ' + backgroundImage }, React.createElement('div', { onClick: toggleView }, React.createElement(IconLeftArrow, null)), React.createElement(WeatherDetailsContainer, { nextEightHours: nextEightHours }));
 	      }
@@ -21897,7 +21901,7 @@
 	var React = __webpack_require__(1);
 
 	function temp(props) {
-	  return React.createElement('section', { className: 'temp' }, React.createElement('h1', { className: 'degrees' }, props.currentTemp), React.createElement('h3', null, props.summary), React.createElement('p', { style: { fontFamily: 'Courier', maxWidth: '10em', display: 'block' } }, props.lastWeatherCall, ' '));
+	  return React.createElement('section', { className: 'temp' }, React.createElement('h1', { className: 'degrees' }, props.currentTemp), React.createElement('p', null, React.createElement('em', null, 'Feels like ', props.feelsLike, '.')), React.createElement('h3', null, props.summary), React.createElement('p', { style: { fontFamily: 'Courier', maxWidth: '10em', display: 'block' } }, props.lastWeatherCall, ' '));
 	}
 
 	module.exports = temp;
