@@ -7,7 +7,7 @@ function IconAeropress(props) {
 
   return (
     <svg width="76px" height="76px" viewBox="0 0 76 76">
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Page-1" stroke="none" width="1" fill="none">
             <g id="main" transform="translate(-445.000000, -234.000000)">
                 <g id="Group-20" transform="translate(445.000000, 234.000000)">
                     <g id="Group-4" transform="translate(0.549595, 0.870743)">

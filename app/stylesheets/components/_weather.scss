@@ -27,19 +27,19 @@
     }
 
     &.clear-day {
-      background-image: weather-image('ocwmWiNAWGs');
+      background-image: weather-image('f3s9JUjahhs');
     }
 
     &.clear-night {
-      background-image: weather-image('Jztmx9yqjBw');
+      background-image: weather-image('8weijaL92T8');
     }
 
     &.rain {
-      background-image: weather-image('pGQbWXBC1dA');
+      background-image: weather-image('vg6zo_GJf1k');
     }
 
     &.snow {
-      background-image: weather-image('wLn_6Y4j7EY');
+      background-image: weather-image('F3ePNdQb_Lg');
     }
 
     &.sleet {
@@ -59,23 +59,15 @@
     }
 
     &.partly-cloudy-day {
-      background-image: weather-image('UAin9f4XOP0');
+      background-image: weather-image('Fxi1FPvbPa0');
     }
 
     &.partly-cloudy-night {
-      background-image: weather-image('WCtvwLHC9Ec');
+      background-image: weather-image('J4aLKW3T0FE');
     }
 
     &.no-bg-image {
       background-color: black;
-    }
-
-
-  }
-
-  .degrees {
-    &::after {
-      content: '°';
     }
   }
 
@@ -87,9 +79,14 @@
       margin: 0em -0.15em 0 0;
     }
 
+    p {
+      margin: 0;
+    }
+
     h3 {
       font-weight: 400;
       line-height: 1.4em;
+      margin: 0.5em;
     }
   }
 
@@ -125,7 +122,7 @@
     flex-direction: row;
     justify-content: center;
 
-    margin-bottom: 0.5em;
+    margin-bottom: 9%;
 
     div {
       display: flex;

@@ -10,7 +10,7 @@ let WeatherContainer = React.createClass({
   getInitialState: function () {
     return {
       currentTemp: null,
-      feelsLike: `--`,
+      feelsLike: null,
       summary: '---',
       highTemp: null,
       lowTemp: null,
@@ -122,7 +122,6 @@ let WeatherContainer = React.createClass({
     const longitude = '41.902881';
 
     jsonp(`https://api.darksky.net/forecast/${apiKey}/${longitude},${latitude}`, function (data) {
-      console.log(data);
       this.setState({
         currentTemp: data.currently.temperature,
         feelsLike: data.currently.apparentTemperature,
@@ -134,7 +133,7 @@ let WeatherContainer = React.createClass({
         sunset: data.daily.data[0].sunsetTime,
         hourly: data.hourly.data,
         raining: data.currently.precipIntensity > 14 ? true : false,
-        backgroundImage: data.currently.icon
+        backgroundImage: 'snow'// data.currently.icon
       })
     }.bind(this));
   },
@@ -219,7 +218,7 @@ let WeatherContainer = React.createClass({
     // Prepare data to be passed to presentational components
     let backgroundImage = this.state.backgroundImage;
     let currentTemp = this.roundNumber(this.state.currentTemp);
-    let feelsLike = Math.round(this.state.feelsLike) + '°';
+    let feelsLike = Math.round(this.state.feelsLike);
     let summary = this.state.summary;
     let highTemp = this.roundNumber(this.state.highTemp);
     let lowTemp = this.roundNumber(this.state.lowTemp);
