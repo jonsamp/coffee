@@ -21619,8 +21619,8 @@
 	    }
 
 	    var apiKey = 'a0851d6b87a2a541d0fbaff2d0f7518b';
-	    var latitude = '-87.701378';
-	    var longitude = '41.902881';
+	    var latitude = '-73.952227';
+	    var longitude = '40.670387';
 
 	    jsonp('https://api.darksky.net/forecast/' + apiKey + '/' + longitude + ',' + latitude, function (data) {
 	      this.setState({
@@ -21634,7 +21634,7 @@
 	        sunset: data.daily.data[0].sunsetTime,
 	        hourly: data.hourly.data,
 	        raining: data.currently.precipIntensity > 14 ? true : false,
-	        backgroundImage: 'snow' // data.currently.icon
+	        backgroundImage: data.currently.icon
 	      });
 	    }.bind(this));
 	  },
