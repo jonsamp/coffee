@@ -21902,10 +21902,16 @@
 	function temp(props) {
 	  return React.createElement('section', { className: 'temp' }, React.createElement('h1', { className: 'degrees' }, props.currentTemp, '°'), function () {
 	    var month = new Date().getMonth() + 1;
-	    if (month > 11 || month < 4) {
+
+	    // Display the apparent temp if different from current temp
+	    if (props.feelsLike !== props.currentTemp) {
 	      return React.createElement('p', null, React.createElement('em', null, 'Feels like ', props.feelsLike, '°'));
 	    }
-	  }(), React.createElement('h3', null, props.summary), React.createElement('p', { style: { fontFamily: 'Courier', maxWidth: '10em', display: 'block' } }, props.lastWeatherCall, ' '));
+	  }(), React.createElement('h3', null, props.summary), React.createElement('p', { style: {
+	      fontFamily: 'Courier',
+	      maxWidth: '10em',
+	      display: 'block'
+	    } }, props.lastWeatherCall));
 	}
 
 	module.exports = temp;

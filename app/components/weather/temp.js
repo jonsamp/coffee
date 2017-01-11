@@ -8,13 +8,22 @@ function temp(props) {
       {/* Display the apparent temperature if December through March */}
       {(() => {
         let month = (new Date).getMonth() + 1;
-        if (month > 11 || month < 4) {
-          return <p><em>Feels like {props.feelsLike}°</em></p>
+
+        // Display the apparent temp if different from current temp
+        if (props.feelsLike !== props.currentTemp) {
+          return <p>
+            <em>Feels like {props.feelsLike}°</em>
+          </p>
         }
       })()}
 
       <h3>{props.summary}</h3>
-      <p style={{ fontFamily: 'Courier', maxWidth: '10em', display: 'block'}}>{props.lastWeatherCall} </p>
+      <p style={{
+        fontFamily: 'Courier',
+        maxWidth: '10em',
+        display: 'block'
+      }}>{props.lastWeatherCall}
+      </p>
     </section>
   )
 }
