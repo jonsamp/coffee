@@ -18,12 +18,6 @@ function temp(props) {
       })()}
 
       <h3>{props.summary}</h3>
-      <p style={{
-        fontFamily: 'Courier',
-        maxWidth: '10em',
-        display: 'block'
-      }}>{props.lastWeatherCall}
-      </p>
     </section>
   )
 }
