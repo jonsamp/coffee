@@ -21626,7 +21626,7 @@
 	      this.setState({
 	        currentTemp: data.currently.temperature,
 	        feelsLike: data.currently.apparentTemperature,
-	        summary: data.minutely.summary,
+	        summary: data.hourly.summary,
 	        highTemp: data.daily.data[0].temperatureMax,
 	        lowTemp: data.daily.data[0].temperatureMin,
 	        humidity: data.currently.humidity,
@@ -21901,8 +21901,6 @@
 
 	function temp(props) {
 	  return React.createElement('section', { className: 'temp' }, React.createElement('h1', { className: 'degrees' }, props.currentTemp, '°'), function () {
-	    var month = new Date().getMonth() + 1;
-
 	    // Display the apparent temp if different from current temp
 	    if (props.feelsLike !== props.currentTemp) {
 	      return React.createElement('p', null, React.createElement('em', null, 'Feels like ', props.feelsLike, '°'));
