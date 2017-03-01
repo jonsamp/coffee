@@ -125,7 +125,7 @@ let WeatherContainer = React.createClass({
       this.setState({
         currentTemp: data.currently.temperature,
         feelsLike: data.currently.apparentTemperature,
-        summary: data.minutely.summary,
+        summary: data.hourly.summary,
         highTemp: data.daily.data[0].temperatureMax,
         lowTemp: data.daily.data[0].temperatureMin,
         humidity: data.currently.humidity,
