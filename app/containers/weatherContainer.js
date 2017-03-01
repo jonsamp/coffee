@@ -135,7 +135,7 @@ let WeatherContainer = React.createClass({
         raining: data.currently.precipIntensity > 14 ? true : false,
         backgroundImage: data.currently.icon
       })
-    }.bind(this));
+    }.bind(this)); 
   },
 
   // Epoch -> human time
